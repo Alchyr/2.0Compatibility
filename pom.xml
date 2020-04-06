@@ -1,0 +1,140 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>versiontwocompatible</groupId>
+    <artifactId>versiontwocompatible</artifactId>
+    <name>2.0 Compatiblity</name>
+    <version>2.0</version>
+    <description>This mod will fix ONLY THE MOST BASIC compatibility issues caused by the 2.0 update. It will not fix ALL mods, and some are simply impossible to fix with this method. View the Steam Workshop page for a list of confirmed compatible/incompatible mods. This mod should have no effect on mods that already work in 2.0.</description>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <SlayTheSpire.version>01-27-2020</SlayTheSpire.version>
+        <ModTheSpire.version>3.15.0</ModTheSpire.version>
+        <Steam.path>C:/Program Files (x86)/Steam/steamapps</Steam.path>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.megacrit.cardcrawl</groupId>
+            <artifactId>slaythespire</artifactId>
+            <version>2.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/common/SlayTheSpire/desktop-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl</groupId>
+            <artifactId>modthespire</artifactId>
+            <version>${ModTheSpire.version}</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>snecko</groupId>
+            <artifactId>snecko</artifactId>
+            <version>0.0.20</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1617257048/SneckoMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>TheMarksman</groupId>
+            <artifactId>TheMarksman</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1614349533/TheMarksman.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>TheMarksman</groupId>
+            <artifactId>TheMarksman</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1614349533/TheMarksman.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>Nier</groupId>
+            <artifactId>Nier</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1619737531/Td1madaoMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>relicfilter</groupId>
+            <artifactId>relicfilter</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1632445960/RelicFilter.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>tea</groupId>
+            <artifactId>tea</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1668512116/Exordian_avenger.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>somnambulant</groupId>
+            <artifactId>somnambulant</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1702374410/SomnambulantMod.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+
+    <!-- This is how your code is packaged into the jar file-->
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*.psd</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
+                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/VersionTwoCompatibility/content/${project.artifactId}.jar"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>ModTheSpire.json</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>ModTheSpire.json</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>
