@@ -3,16 +3,17 @@
 
     <groupId>versiontwocompatible</groupId>
     <artifactId>versiontwocompatible</artifactId>
-    <name>2.0 Compatiblity</name>
-    <version>2.0</version>
-    <description>This mod will fix ONLY THE MOST BASIC compatibility issues caused by the 2.0 update. It will not fix ALL mods, and some are simply impossible to fix with this method. View the Steam Workshop page for a list of confirmed compatible/incompatible mods. This mod should have no effect on mods that already work in 2.0.</description>
+    <name>2.2 Compatibility</name>
+    <version>2.2.6</version>
+    <description>This mod will fix ONLY THE MOST BASIC compatibility issues caused by the 2.0/2.2 update. It will not fix ALL mods, and some are simply impossible to fix with this method. View the Steam Workshop page for a list of confirmed compatible/incompatible mods. This mod should have no effect on mods that already work correctly.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>01-27-2020</SlayTheSpire.version>
-        <ModTheSpire.version>3.15.0</ModTheSpire.version>
+        <SlayTheSpire.version>11-30-2020</SlayTheSpire.version>
+        <ModTheSpire.version>3.18.0</ModTheSpire.version>
         <Steam.path>C:/Program Files (x86)/Steam/steamapps</Steam.path>
+        <stsPath>${Steam.path}/common/SlayTheSpire/</stsPath>
     </properties>
 
     <dependencies>
@@ -31,11 +32,32 @@
             <systemPath>${Steam.path}/workshop/content/646570/1605060445/ModTheSpire.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>snecko</groupId>
-            <artifactId>snecko</artifactId>
-            <version>0.0.20</version>
+            <groupId>downfall</groupId>
+            <artifactId>downfall</artifactId>
+            <version>0.0.0</version>
             <scope>system</scope>
-            <systemPath>${Steam.path}/workshop/content/646570/1617257048/SneckoMod.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1610056683/downfall.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>actlikeit</groupId>
+            <artifactId>actlikeit</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1934902042/actlikeit.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.megacrit.cardcrawldebug</groupId>
+            <artifactId>SlayTheSpirePatched</artifactId>
+            <version>${SlayTheSpire.version}</version>
+            <scope>system</scope>
+            <systemPath>${stsPath}desktop-1.0-patched.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>rts</groupId>
+            <artifactId>rts</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1610173938/ReplayTheSpireMod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>TheMarksman</groupId>
@@ -45,11 +67,11 @@
             <systemPath>${Steam.path}/workshop/content/646570/1614349533/TheMarksman.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>TheMarksman</groupId>
-            <artifactId>TheMarksman</artifactId>
+            <groupId>randomchar</groupId>
+            <artifactId>randomchar</artifactId>
             <version>0.0.0</version>
             <scope>system</scope>
-            <systemPath>${Steam.path}/workshop/content/646570/1614349533/TheMarksman.jar</systemPath>
+            <systemPath>${Steam.path}/workshop/content/646570/1651429267/RandomCharacterMod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>Nier</groupId>
@@ -78,6 +100,69 @@
             <version>0.0.0</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/workshop/content/646570/1702374410/SomnambulantMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>accelerator</groupId>
+            <artifactId>accelerator</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1646862430/TheAccelerator.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>judge</groupId>
+            <artifactId>judge</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1891628562/WordoMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>marisa</groupId>
+            <artifactId>marisa</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1614104912/TS05_Marisa.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>bettermatch</groupId>
+            <artifactId>bettermatch</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/2085989942/betterMatch.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>komeijimod</groupId>
+            <artifactId>komeijimod</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1613792088/KomeijiMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>potionbrewer</groupId>
+            <artifactId>potionbrewer</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/2041287303/Potionbrewer.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>menagerie</groupId>
+            <artifactId>menagerie</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/2199582452/Menagerie.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>kombatant</groupId>
+            <artifactId>kombatant</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/2007444736/KombatMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>unknown-chances</groupId>
+            <artifactId>unknown-chances</artifactId>
+            <version>0.0.0</version>
+            <scope>system</scope>
+            <systemPath>${Steam.path}/workshop/content/646570/1630150006/UnknownChances.jar</systemPath>
         </dependency>
     </dependencies>
 
